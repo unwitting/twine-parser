@@ -23,7 +23,7 @@ const { parseHTML, parseUrl, parsePhilomeLa } = require('twine-parser')
 This method can be passed the raw HTML contents of a Twine game. You might
 have read it from a local file or loaded it from the web yourself.
 
-Returns a parsed Twine game, syncronously (see below for the format).
+Returns a [parsed Twine game](#parsed-game-format), syncronously.
 
 ```
 const parsedGame = parseHTML(html)
@@ -32,8 +32,7 @@ const parsedGame = parseHTML(html)
 ### parseURL(url) -> Promise(ParsedGame)
 
 This method will load a Twine game hosted at the given URL and then parse it
-as per `parseHTML`. Returns a promise for a parsed game (see below for
-format).
+as per `parseHTML`. Returns a promise for a [parsed game](#parsed-game-format).
 
 ```
 const parsedGame = await parseUrl
@@ -44,7 +43,7 @@ const parsedGame = await parseUrl
 This method is a convenience for loading a Twine game hosted on
 [philome.la](http://philome.la). Give the username of the creator and the
 game's name (you can see it in the URL on the site) and you'll get a promise for
-a parsed game (see below for format).
+a [parsed game](#parsed-game-format).
 
 ## Parsed game format
 

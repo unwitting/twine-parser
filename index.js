@@ -6,7 +6,7 @@ const parseHTML = html => {
   const $ = cheerio.load(html);
   const passages = [];
   $("tw-passagedata").each((i, el) => {
-    const pid = $(el).attr("pid");
+    const pid = parseInt($(el).attr("pid"), 10);
     const name = $(el).attr("name");
     const text = $(el).text();
     const rawLinks = text.match(/\[\[[^\[\]]+\]\]/g) || [];
