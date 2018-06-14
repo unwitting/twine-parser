@@ -35,7 +35,7 @@ This method will load a Twine game hosted at the given URL and then parse it
 as per `parseHTML`. Returns a promise for a [parsed game](#parsed-game-format).
 
 ```
-const parsedGame = await parseUrl
+const parsedGame = await parseURL(url)
 ```
 
 ### parsePhilomeLa(username, game) -> Promise(ParsedGame)
@@ -44,6 +44,10 @@ This method is a convenience for loading a Twine game hosted on
 [philome.la](http://philome.la). Give the username of the creator and the
 game's name (you can see it in the URL on the site) and you'll get a promise for
 a [parsed game](#parsed-game-format).
+
+```
+const parsedGame = await parsePhilomeLa(username, game)
+```
 
 ## Parsed game format
 
