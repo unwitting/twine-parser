@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "author": {
+    "email": "unwttng@gmail.com",
+    "name": "Jack Preston",
+    "url": "https://unwttng.com"
+  },
+  "name": "twine-parser",
+  "description": "Parse a Twine game from raw HTML or from a URL (philome.la support) into its passages and connecivity",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "lodash": "^4.17.10",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
