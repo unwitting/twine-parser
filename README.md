@@ -13,7 +13,12 @@ npm install --save twine-parser
 ```
 
 ```
-const { parseHTML, parseUrl, parsePhilomeLa } = require('twine-parser')
+const {
+    parseHTML,
+    parseUrl,
+    parsePhilomeLa,
+    toCytoscapeGraph,
+} = require('twine-parser')
 ```
 
 ## Interface
@@ -48,6 +53,11 @@ a [parsed game](#parsed-game-format).
 ```
 const parsedGame = await parsePhilomeLa(username, game)
 ```
+
+### toCytoscapeGraph(parsedGame) -> CytoscapeGraph
+
+Takes a [parsed game](#parsed-game-format) from one of the other calls and
+converts it to a cytoscape.js graph object.
 
 ## Parsed game format
 

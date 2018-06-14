@@ -1,5 +1,6 @@
 const _ = require("lodash");
 const cheerio = require("cheerio");
+const cytoscape = require("cytoscape");
 const request = require("request-promise-native");
 
 const parseHTML = html => {
@@ -46,4 +47,33 @@ const parseURL = async url => {
 const parsePhilomeLa = (user, game) =>
   parseURL(`http://philome.la/${user}/${game}/play`);
 
-module.exports = { parseHTML, parseURL, parsePhilomeLa };
+const toCytoscapeGraph = parsedGame => {
+  const { passages } = parsedGame;
+  const nodes = [];
+  let edges = [];
+  passages.forEach(passage => {
+    nodes.push({
+      group: "nodes",
+      data: {
+        id: passage.pid,
+        passage
+      }
+    });
+    edges = [
+      ...edges,
+      ...passage.links.map(({ destination: { pid } }) => ({
+        group: "edges",
+        data: {
+          id: `${passage.pid} -> ${pid}`,
+          source: passage.pid,
+          target: pid
+        }
+      }))
+    ];
+  });
+  return cytoscape({
+    elements: [...nodes, ...edges]
+  });
+};
+
+module.exports = { parseHTML, parseURL, parsePhilomeLa, toCytoscapeGraph };
