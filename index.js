@@ -19,7 +19,7 @@ const parseHTML = html => {
       )
       .map(([linkText, destinationName]) => ({
         text: linkText,
-        destination: { name: destinationName }
+        destination: { name: destinationName || linkText }
       }));
     const passage = { pid, name, text, rawLinks, links };
     passages.push(passage);
