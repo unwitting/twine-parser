@@ -79,6 +79,10 @@ converts it to a cytoscape.js graph object.
                         pid: 2
                     }
                 }
+            ],
+            tags: [
+                "first-tag",
+                "second-tag"
             ]
         },
         {

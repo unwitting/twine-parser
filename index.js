@@ -22,7 +22,8 @@ const parseHTML = html => {
         text: linkText,
         destination: { name: destinationName || linkText }
       }));
-    const passage = { pid, name, text, rawLinks, links };
+    const tags = ($(el).attr("tags") || "").split(/\s+/).filter(Boolean);
+    const passage = { pid, name, text, rawLinks, links, tags };
     passages.push(passage);
   });
   passages.forEach(({ links }) => {
