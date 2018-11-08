@@ -18,5 +18,3 @@ const run = async () => {
 };
 
 run();
-
-console.log(JSON.stringify(parseHTML(getDemoData()), null, 2));
