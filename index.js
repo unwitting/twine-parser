@@ -41,6 +41,7 @@ const parseHTML = html => {
 };
 
 const parseURL = async url => {
+  console.log(url)
   const html = await request(url);
   return parseHTML(html);
 };

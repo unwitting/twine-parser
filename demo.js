@@ -10,11 +10,10 @@ const getDemoData = () => fs.readFileSync("./demo.html").toString();
 
 const run = async () => {
   const parsed = await parsePhilomeLa(
-    "plwmpo",
-    "i-told-you-not-to-go-to-cat-mountain"
+    "chintokkong",
+    "a-hypertext-night"
   );
   console.log(JSON.stringify(parsed, null, 2));
-  // console.log(toCytoscapeGraph(parsed));
 };
 
 run();
